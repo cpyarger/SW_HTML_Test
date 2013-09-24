@@ -27,22 +27,18 @@
     table-layout: fixed;
     width: 200px;
     }
-    td#q4_td
-    {
-    width: 45px;
-    }
-    td#q4_td.red
-    {
-    background-color:#FF0000;
-    }
+    td#q4_td{width: 45px;}
+    td#q4_td.red{background-color:#FF0000;}
     li#question5
     {
-    margin-top:25px ;
+    margin-top:15px ;
     background-image:url('http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Blue_globe_banner.svg/800px-Blue_globe_banner.svg.png');
- 
     background-repeat:no-repeat;
     background-size:100%
     }
+    p.bold{font-weight:bold;}
+    p.instructionContent li {text-color: #383838;}
+
   </style>
   <script type="text/javascript">
     // Q: Describe what these functions do using line comments
@@ -88,7 +84,7 @@
     }
   </style>
   <div id="theTest" style="display:none;">
-	  <h2>
+		  <h2>
 		Questions
 	  </h2>
 	  <div id="questions" class="questionContainer">
@@ -153,16 +149,17 @@
         <li id="question6"><strong>Q:</strong>
           <h3 style="display:inline"> Feature Question </h3><br>
           Create a button below this sentence.<br>
+	<input type="button" onclick="alert('I\'ve done it!')" value="Guess What?"><br>
           When the button is clicked, make an alert box appear that says &quot;I&#39;ve done it!&quot;<br>
         </li>
         <li id="question7"><strong>Q:</strong>
-          Make this question bold using css.  Use an external class selector to apply the style.
+          <p class="bold">Make this question bold using css.  Use an external class selector to apply the style.</p>
         </li>
         <li id="question8"><strong>Q:</strong>
           Make all &lt;li&gt; elements in the Instructions section dark gray (text-color #383838;) using a single css class selector.
         </li>
         <li id="question9"><strong>Q:</strong>
-        <span class="invisibleQuestion">
+        <span class="visibleQuestion">
           Make this question visible.
         </span>
         </li>
