@@ -38,7 +38,42 @@
     }
     p.bold{font-weight:bold;}
     p.instructionContent li {text-color: #383838;}
+    .inline{display:inline;}
 
+.box {
+	position: absolute;
+	border: 3px solid black ;
+	top: 50%;
+	left: 50%;
+	padding: 0px;
+	margins: 0px;
+  	width:500px;
+  	height:275px;
+  	filter: alpha(opacity =   70); 
+  	opacity: 0.70;
+}
+.boxBG {
+	z-index: 1;
+	position: absolute;
+	background-color:#F5F5DC;
+	filter: alpha(opacity =   70);
+	opacity: 0.70;
+	width: 100%;
+	height: 100%;
+}
+.boxContent {
+	z-index: 2;
+	position: relative;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #00FF00;
+}
+.boxLink {
+	z-index:3;
+	position:absolute;
+	right:0%;
+	top:0%;
+}
   </style>
   <script type="text/javascript">
     // Q: Describe what these functions do using line comments
@@ -47,14 +82,37 @@
       window.alert(value);
     }
 
-    function beginTheTest() // This function uses javascript to update the CSS of the page, The end result is when the function id run the introduction disappears and is replaced with the test
-    {
-      var introduction = document.getElementById("introduction"); 
-      var theTest = document.getElementById("theTest");
+    // This function uses javascript to update the CSS of the page, The end result is when the function id run the introduction disappears and is replaced with the test
+function beginTheTest() {
+	YUI().use('transition', function(Y) {
 
-      introduction.style.display = "none";
-      theTest.style.display = "block";
-    }
+		// Shrink to nothing.
+		Y.one('#introduction').transition({
+			opacity : {
+				delay : 0,
+				duration : 0.15,
+				value : 0
+			}
+		}, function() {
+
+			this.remove();
+Y.one('#box').hide(true);
+			Y.one('#theTest').show(true);
+Y.one('#box').show(true);
+		});
+
+	});
+
+}
+
+
+    
+
+function BBClick() {
+	document.getElementById('box').remove('self');
+}
+
+
   </script>
   <title>Shapeways.com HTML Test</title>
 </head>
@@ -63,7 +121,7 @@
     <h1>
       Shapeways.com HTML Test
     </h1>
-    <h2>
+    <h2 >
       Instructions
     </h2>
     <p class="instructionContent">
@@ -103,7 +161,7 @@
        
 	</li>
         <li id="question4"><strong>Q:</strong>
-        <h3 style="display:inline"> Feature Question </h3><br>
+        <h3 class="inline"> Feature Question </h3><br>
         Add a table inside this list item.<br>
         &mdash;
         Make 5 rows and 3 columns.<br>
@@ -147,7 +205,7 @@
 	<a href="http://www.shapeways.com/jobs">Jobs @ Shapeways</a>
         </li>
         <li id="question6"><strong>Q:</strong>
-          <h3 style="display:inline"> Feature Question </h3><br>
+          <h3 class="inline"> Feature Question </h3><br>
           Create a button below this sentence.<br>
 	<input type="button" onclick="alert('I\'ve done it!')" value="Guess What?"><br>
           When the button is clicked, make an alert box appear that says &quot;I&#39;ve done it!&quot;<br>
@@ -167,14 +225,14 @@
         <span>
           Describe the differences between the IE6, IE7, and W3C box models.
         </span>
-        </li>
+        </li><ul><li>the main difference is in how width is determined.</li></ul>
         <li id="question11"><strong>Q:</strong>
         <span>
           Extract all inline styles in this test to external class selectors.
         </span>
         </li>
         <li id="question12"><strong>Q:</strong>
-        <h3 style="display:inline"> Adventure Question </h3>
+        <h3 class="inline"> Adventure Question </h3>
         <ul>
           <li>
             Add a semi-transparent box which is centered on the screen.
@@ -196,9 +254,18 @@
             Have a link in the top right corner which closes the box.
           </li>
           </ul>
+<div class="box" id="box">
+	<div class="boxBG"></div>
+	<div class="boxContent">
+		<p>imma box.</p>
+		<div class="boxlink">
+			<a href="javascript:BBClick();" >Close</a>
+		</div>
+	</div>
+</div>
         </li>
         <li id="question13"><strong>Q:</strong>
-        <h3 style="display:inline"> Adventure Question </h3><br>
+        <h3 class="inline"> Adventure Question </h3><br>
           Change the functionality of the &quot;begin the test&quot; link:
           <ul>
             <li>
@@ -210,7 +277,7 @@
           </ul>
         </li>
         <li id="question14"><strong>Q:</strong>
-        <h3 style="display:inline"> Feature Question </h3><br>
+        <h3 class="inline"> Feature Question </h3><br>
         <ol>
         <li> Show how to include a variable in a page using PHP</li>
         <li> Show how to loop over a collection of elements in PHP</li>
@@ -219,11 +286,11 @@
         </ol>
         </li>
         <li id="question15"><strong>Q:</strong>
-        <h3 style="display:inline"> Adventure Question </h3><br>
+        <h3 class="inline"> Adventure Question </h3><br>
           Describe the MVC design pattern as it applies to web servers - start from initial HTTP request and end with writing the response.
         </li>
         <li id="question16"><strong>Q:</strong>
-        <h3 style="display:inline"> Feature Question </h3><br>
+        <h3 class="inline"> Feature Question </h3><br>
           Describe the pros and cons of version control.
         </li>
       </ul>
@@ -235,5 +302,6 @@
       color: #FFFFFF;
     }
   </style>
+<script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script>
 </body>
 </html>
