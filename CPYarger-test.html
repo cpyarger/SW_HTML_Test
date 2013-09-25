@@ -21,11 +21,12 @@
     { 
     color:#0000ff;
     }
-    table
+    table#q4
     {
     border: 1px solid black;
     table-layout: fixed;
-    width: 200px;
+    width:500px;
+    height:200px;
     }
     td#q4_td{width: 45px;}
     td#q4_td.red{background-color:#FF0000;}
@@ -171,7 +172,7 @@ function BBClick() {
         Give the table a border.<br>
         &mdash;
         Give the middle cell a red background.<br>
-		<table border="1">
+		<table border="1" id="q4">
 			<tr id="q4_tr_1">
 				<td id="q4_td"></td>
 				<td id="q4_td"></td>
@@ -280,22 +281,75 @@ function BBClick() {
         <h3 class="inline"> Feature Question </h3><br>
         <ol>
         <li> Show how to include a variable in a page using PHP</li>
+	<ul><li> $foo=bar;</li><li>include 'file.inc';</li></ul>
         <li> Show how to loop over a collection of elements in PHP</li>
+	<code><?php</code><br>
+$arr = array(1, 2, 3, 4);<br>
+foreach ($arr as &$value) {<br>
+    $value = $value * 2;<br>
+}<br>
+// $arr is now array(2, 4, 6, 8)<br>
         <li> Show an IF/ELSEIF/ELSE conditional in PHP</li>
+if ($a > $b) {<br>
+    echo "a is bigger than b";<br>
+} elseif ($a == $b) {<br>
+    echo "a is equal to b";<br>
+} else {<br>
+    echo "a is smaller than b";
+}<br>
         <li> Show three ways to include content from another file in PHP</li>
+	<ul><li>include 'file';</li>
+	<li>require 'file';</li>
+	<li>$content = get_include_contents('file.php');</li></ul>
         </ol>
         </li>
         <li id="question15"><strong>Q:</strong>
         <h3 class="inline"> Adventure Question </h3><br>
           Describe the MVC design pattern as it applies to web servers - start from initial HTTP request and end with writing the response.
+<ol>
+ <li>HttpRequest is made to the controller, </li>
+ <li>Controller updates/queries the Model, </li>
+ <li>Model returns status to the Controller, </li>
+ <li>Controller Sends view request, with applicible parameters, </li>
+ <li>the View Queries for the Model's state, </li>
+ <li>The model Returns the state to the View, </li>
+ <li>the view sends the HTTP response.</li>
+</ol>
         </li>
         <li id="question16"><strong>Q:</strong>
         <h3 class="inline"> Feature Question </h3><br>
           Describe the pros and cons of version control.
         </li>
       </ul>
-	  </div>
-  </div>
+
+
+<center><table width="100%">
+<tr>
+<th>Pros</th><th>Cons</th>
+</tr>
+<tr>
+<td>
+<ul>
+<li>Helps promote backing up of data</li>
+<li>Good form of security for unreleased code / code changes</li>
+<li>Encourages commenting of code changes</li>
+<li>Allows many people to work on the same files simultaniously</li>
+<li>Can perform repetitive task automagically. ex merging branches, tracking checkouts.</li>
+<li>Using tools like git, with external repositories like github provides a free off-site backup of files.</li>
+<li>Can allow for reviewing and restoring earlier revisions of files</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>It can be difficult to learn</li>
+<li>It may seem tedious at times</li>
+<li>it can be time consuming</li>
+<li>Can be easy to break other peoples work if you are new to the system</li>
+</ul>
+</td>
+</tr>
+</table></center>
+  </div>	  </div>
   <style type="text/css">
     .invisibleQuestion
     {
