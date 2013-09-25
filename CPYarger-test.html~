@@ -1,0 +1,359 @@
+<html>
+<head>
+  <style type="text/css">
+    .questionContainer
+    {
+      border: 1px solid #000000;
+    }
+    .questionContainer ul
+    {
+
+    }
+    .questionContainer li
+    {
+      padding: 14px;
+    }
+    .invisibleQuestion
+    {
+      display: none;
+    }
+    p#question3
+    { 
+    color:#0000ff;
+    }
+    table#q4
+    {
+    border: 1px solid black;
+    table-layout: fixed;
+    }
+    td#q4_td{width: 45px;}
+    td#q4_td.red{background-color:#FF0000;}
+    li#question5
+    {
+    margin-top:15px ;
+    background-image:url('http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Blue_globe_banner.svg/800px-Blue_globe_banner.svg.png');
+    background-repeat:no-repeat;
+    background-size:100%
+    }
+    p.bold{font-weight:bold;}
+    p.instructionContent li {text-color: #383838;}
+    .inline{display:inline;}
+
+.box {
+	position: absolute;
+	border: 3px solid black ;
+	top: 50%;
+	left: 50%;
+	padding: 0px;
+	margins: 0px;
+  	width:500px;
+  	height:275px;
+  	filter: alpha(opacity =   70); 
+  	opacity: 0.70;
+}
+.boxBG {
+	z-index: 1;
+	position: absolute;
+	background-color:#F5F5DC;
+	filter: alpha(opacity =   70);
+	opacity: 0.70;
+	width: 100%;
+	height: 100%;
+}
+.boxContent {
+	z-index: 2;
+	position: relative;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #00FF00;
+}
+.boxLink {
+	z-index:3;
+	position:absolute;
+	right:0%;
+	top:0%;
+}
+  </style>
+  <script type="text/javascript">
+    // Q: Describe what these functions do using line comments
+    function alertValue(value) // greates a pop-up alert with the contents of variable "value'
+    {
+      window.alert(value);
+    }
+
+    // This function uses javascript to update the CSS of the page, The end result is when the function id run the introduction disappears and is replaced with the test
+function beginTheTest() {
+	YUI().use('transition', function(Y) {
+
+		// Shrink to nothing.
+		Y.one('#introduction').transition({
+			opacity : {
+				delay : 0,
+				duration : 0.15,
+				value : 0
+			}
+		}, function() {
+
+			this.remove();
+Y.one('#box').hide(true);
+			Y.one('#theTest').show(true);
+Y.one('#box').show(true);
+		});
+
+	});
+
+}
+
+
+    
+
+function BBClick() {
+	document.getElementById('box').remove('self');
+}
+
+
+  </script>
+  <title>Shapeways.com HTML Test</title>
+</head>
+<body>
+  <div id="introduction">
+    <h1>
+      Shapeways.com HTML Test
+    </h1>
+    <h2 >
+      Instructions
+    </h2>
+    <p class="instructionContent">
+      Using the text-editor of your choice, make changes to this HTML document as instructed in the questions below.<br>
+      Each question will be marked with <strong>Q</strong>.<br>
+      Please modify this HTML with your answers (keep all CSS and Javascript in this file).
+      <br><br>
+      Save your test as [yourName]-test.html<br><br>
+      <a href="javascript:void(0);" onclick="beginTheTest()">Click here to begin the test</a>
+    </p>
+  </div>
+  <style type="text/css">
+    .invisibleQuestion
+    {
+      filter:alpha(opacity=40);
+      -moz-opacity:0.4;
+      opacity:0.4;
+    }
+  </style>
+  <div id="theTest" style="display:none;">
+		  <h2>
+		Questions
+	  </h2>
+	  <div id="questions" class="questionContainer">
+<ul>
+      	<li id="question1" class="question"><strong>Q:</strong>
+	<p />Add this question to the unordered list shown below.
+      </li>
+      
+        <li id="question2"><strong>Q:</strong>
+                <p style="color:#0000FF"> Make this question blue using an inline style. </p>
+        </li>
+        <li><strong>Q:</strong>
+	<p id="question3">
+        Make sure this question has a unique id.
+        Make this question blue using an external id selector.</p>	
+       
+	</li>
+        <li id="question4"><strong>Q:</strong>
+        <h3 class="inline"> Feature Question </h3><br>
+        Add a table inside this list item.<br>
+        &mdash;
+        Make 5 rows and 3 columns.<br>
+        &mdash;
+        Give the cells a width of 45px.<br>
+        &mdash;
+        Give the table a border.<br>
+        &mdash;
+        Give the middle cell a red background.<br>
+		<table border="1" id="q4">
+			<tr id="q4_tr_1">
+				<td id="q4_td"></td>
+				<td id="q4_td"></td>
+				<td id="q4_td"></td>
+			</tr>
+			<tr id="q4_tr_2">
+				<td id="q4_td"></td>
+				<td id="q4_td"></td>
+				<td id="q4_td"></td>
+			</tr>
+			<tr id="q4_tr_3">
+				<td id="q4_td"></td>
+				<td id="q4_td" class="red"></td>
+				<td id="q4_td"></td>
+			</tr>
+			<tr id="q4_tr_4">
+				<td id="q4_td"></td>
+				<td id="q4_td"></td>
+				<td id="q4_td"></td>
+			</tr>
+			<tr id="q4_tr_5">
+				<td id="q4_td"></td>
+				<td id="q4_td"></td>
+				<td id="q4_td"></td>
+			</tr>
+		</table>
+        </li>
+        <li id="question5"><strong>Q:</strong>
+        Create a link to the URL http://www.shapeways.com/jobs and make the link text &quot;Jobs @ Shapeways&quot;.
+        Give this question a top margin of 15px, and a background image from the internet.
+	<a href="http://www.shapeways.com/jobs">Jobs @ Shapeways</a>
+        </li>
+        <li id="question6"><strong>Q:</strong>
+          <h3 class="inline"> Feature Question </h3><br>
+          Create a button below this sentence.<br>
+	<input type="button" onclick="alert('I\'ve done it!')" value="Guess What?"><br>
+          When the button is clicked, make an alert box appear that says &quot;I&#39;ve done it!&quot;<br>
+        </li>
+        <li id="question7"><strong>Q:</strong>
+          <p class="bold">Make this question bold using css.  Use an external class selector to apply the style.</p>
+        </li>
+        <li id="question8"><strong>Q:</strong>
+          Make all &lt;li&gt; elements in the Instructions section dark gray (text-color #383838;) using a single css class selector.
+        </li>
+        <li id="question9"><strong>Q:</strong>
+        <span class="visibleQuestion">
+          Make this question visible.
+        </span>
+        </li>
+        <li id="question10"><strong>Q:</strong>
+        <span>
+          Describe the differences between the IE6, IE7, and W3C box models.
+        </span>
+        </li><ul><li>the main difference is in how width is determined.</li></ul>
+        <li id="question11"><strong>Q:</strong>
+        <span>
+          Extract all inline styles in this test to external class selectors.
+        </span>
+        </li>
+        <li id="question12"><strong>Q:</strong>
+        <h3 class="inline"> Adventure Question </h3>
+        <ul>
+          <li>
+            Add a semi-transparent box which is centered on the screen.
+          </li>
+          <li>
+            Give the box a 3px black border.
+          </li>
+          <li>
+            Make the background of the box a light-beige.
+          </li>
+          <li>
+            Make the box 500px wide and 257px tall.
+          </li>
+          <li>
+            Include a paragraph of green sample text in the box.
+          </li>
+          <li>
+            <strong>BONUS:</strong>
+            Have a link in the top right corner which closes the box.
+          </li>
+          </ul>
+<div class="box" id="box">
+	<div class="boxBG"></div>
+	<div class="boxContent">
+		<p>imma box.</p>
+		<div class="boxlink">
+			<a href="javascript:BBClick();" >Close</a>
+		</div>
+	</div>
+</div>
+        </li>
+        <li id="question13"><strong>Q:</strong>
+        <h3 class="inline"> Adventure Question </h3><br>
+          Change the functionality of the &quot;begin the test&quot; link:
+          <ul>
+            <li>
+              use the <strong>YUI javascript library</strong> to animate the introduction box closing.
+            </li>
+            <li>
+              use the <strong>YUI javascript library</strong> to fade the test box in.
+            </li>
+          </ul>
+        </li>
+        <li id="question14"><strong>Q:</strong>
+        <h3 class="inline"> Feature Question </h3><br>
+        <ol>
+        <li> Show how to include a variable in a page using PHP</li>
+	<ul><li> $foo=bar;</li><li>include 'file.inc';</li></ul>
+        <li> Show how to loop over a collection of elements in PHP</li>
+	<code><?php</code><br>
+$arr = array(1, 2, 3, 4);<br>
+foreach ($arr as &$value) {<br>
+    $value = $value * 2;<br>
+}<br>
+// $arr is now array(2, 4, 6, 8)<br>
+        <li> Show an IF/ELSEIF/ELSE conditional in PHP</li>
+if ($a > $b) {<br>
+    echo "a is bigger than b";<br>
+} elseif ($a == $b) {<br>
+    echo "a is equal to b";<br>
+} else {<br>
+    echo "a is smaller than b";
+}<br>
+        <li> Show three ways to include content from another file in PHP</li>
+	<ul><li>include 'file';</li>
+	<li>require 'file';</li>
+	<li>$content = get_include_contents('file.php');</li></ul>
+        </ol>
+        </li>
+        <li id="question15"><strong>Q:</strong>
+        <h3 class="inline"> Adventure Question </h3><br>
+          Describe the MVC design pattern as it applies to web servers - start from initial HTTP request and end with writing the response.
+<ol>
+ <li>HttpRequest is made to the controller, </li>
+ <li>Controller updates/queries the Model, </li>
+ <li>Model returns status to the Controller, </li>
+ <li>Controller Sends view request, with applicible parameters, </li>
+ <li>the View Queries for the Model's state, </li>
+ <li>The model Returns the state to the View, </li>
+ <li>the view sends the HTTP response.</li>
+</ol>
+        </li>
+        <li id="question16"><strong>Q:</strong>
+        <h3 class="inline"> Feature Question </h3><br>
+          Describe the pros and cons of version control.
+        </li>
+      </ul>
+
+
+<center><table width="100%">
+<tr>
+<th>Pros</th><th>Cons</th>
+</tr>
+<tr>
+<td>
+<ul>
+<li>Helps promote backing up of data</li>
+<li>Good form of security for unreleased code / code changes</li>
+<li>Encourages commenting of code changes</li>
+<li>Allows many people to work on the same files simultaniously</li>
+<li>Can perform repetitive task automagically. ex merging branches, tracking checkouts.</li>
+<li>Using tools like git, with external repositories like github provides a free off-site backup of files.</li>
+<li>Can allow for reviewing and restoring earlier revisions of files</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>It can be difficult to learn</li>
+<li>It may seem tedious at times</li>
+<li>it can be time consuming</li>
+<li>Can be easy to break other peoples work if you are new to the system</li>
+</ul>
+</td>
+</tr>
+</table></center>
+  </div>	  </div>
+  <style type="text/css">
+    .invisibleQuestion
+    {
+      color: #FFFFFF;
+    }
+  </style>
+<script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script>
+</body>
+</html>

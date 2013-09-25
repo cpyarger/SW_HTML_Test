@@ -169,15 +169,6 @@
         <h3 style="display:inline"> Adventure Question </h3><br>
           Describe the MVC design pattern as it applies to web servers - start from initial HTTP request and end with writing the response.
         </li>
-<ol>
- <li>HttpRequest is made to the controller, </li>
- <li>Controller updates/queries the Model, </li>
- <li>Model returns status to the Controller, </li>
- <li>Controller Sends view request, with applicible parameters, </li>
- <li>the View Queries for the Model's state, </li>
- <li>The model Returns the state to the View, </li>
- <li>the view sends the HTTP response.</li>
-</ol>
         <li id="question16"><strong>Q:</strong>
         <h3 style="display:inline"> Feature Question </h3><br>
           Describe the pros and cons of version control.
