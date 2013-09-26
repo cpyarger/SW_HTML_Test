@@ -25,7 +25,8 @@ stats = [(k, v) for k, v in stats.items() if k[0] != k[1]]
 
 for p in sorted(stats, key=lambda x: x[1], reverse=True): 
    if ( p[1] >= 50 ): #parses for stats equal or greater than 50
-    print(p) # prints out those pairs that appear in 50 or more lists
+    print(p[0]) # prints out those pairs that appear in 50 or more lists without number of lists
+#    print(p) # prints out those pairs that appear in 50 or more lists with number of lists
 
 
 
