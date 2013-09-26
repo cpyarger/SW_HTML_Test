@@ -1,6 +1,7 @@
 <?php
 $in = "Artist_lists_small.txt";
 $lt = 50;
+
 $lwc = array();
 $ln = 0;
 $out = "output2.txt";
